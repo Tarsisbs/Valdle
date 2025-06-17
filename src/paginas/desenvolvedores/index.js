@@ -1,4 +1,5 @@
-import {StyleSheet, Text, View, ScrollView, Image} from 'react-native';
+import {StyleSheet, Text, View, ScrollView, Image, TouchableOpacity} from 'react-native';
+import {Feather} from '@expo/vector-icons';
 import { useRoute } from "@react-navigation/native";
 import { useNavigation } from "@react-navigation/native";
 import styles from './style';
@@ -10,6 +11,12 @@ export default function Desenvolvedores(){
 
   return(
     <ScrollView style={styles.container}>
+
+      <TouchableOpacity onPress={() => navigation.openDrawer()}>
+
+        <Feather style={{marginLeft: 30, marginTop: 10}} name='menu' size={36} color='#fff'/>
+
+      </TouchableOpacity>
 
       <View style={styles.containerView}>
 
