@@ -1,4 +1,4 @@
-const agentes = [
+const agentesDuelistas = [
     {
        id: '01',
        imagem: require('../assets/agentes/duelistas/Jett_Artwork.png'),
@@ -57,4 +57,4 @@ const agentes = [
     }
 ]
 
-export default agentes;
+export default agentesDuelistas;

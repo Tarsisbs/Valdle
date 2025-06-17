@@ -5,7 +5,8 @@ import styles from './style.js';
 import categorias from '../../categoria.js';
 import CardAgentes from '../cardsAgentes/index.js';
 import CardMapas from '../cardsMapas/index.js';
-import agentes from '../../agentesDuelistas.js';
+import agentesDuelistas from '../../agentesDuelistas.js';
+import agentesControladores from '../../agentesControladores.js';
 import mapas from '../../mapas.js';
 
 const Categoria = () => {
@@ -42,24 +43,46 @@ const Categoria = () => {
             />
 
             {categoriaSelecionada === 'Agentes' && (
+
                 <View style={{width:"100%"}}>
+                    
+                    <Text>Duelistas</Text>
 
-                  <FlatList
+                    <FlatList
 
-                      showsHorizontalScrollIndicator={false}
+                        showsHorizontalScrollIndicator={false}
 
-                      horizontal = {true}
+                        horizontal = {true}
 
-                      data = {agentes}
+                        data = {agentesDuelistas}
 
-                      keyExtractor={(item) => item.id}
-                      renderItem={({item}) => (
+                        keyExtractor={(item) => item.id}
+                        renderItem={({item}) => (
 
-                      <CardAgentes nome = {item.nome} imagem = {item.imagem} sinopse = {item.sinopse} funcao = {item.funcao}/>
-                      
-                      )}
+                        <CardAgentes nome = {item.nome} imagem = {item.imagem} sinopse = {item.sinopse} funcao = {item.funcao}/>
+                        
+                        )}
 
-                  />
+                    />
+
+                    <Text>Controladores</Text>
+
+                    <FlatList
+
+                        showsHorizontalScrollIndicator={false}
+
+                        horizontal = {true}
+
+                        data = {agentesControladores}
+
+                        keyExtractor={(item) => item.id}
+                        renderItem={({item}) => (
+
+                        <CardAgentes nome = {item.nome} imagem = {item.imagem} sinopse = {item.sinopse} funcao = {item.funcao}/>
+                        
+                        )}
+
+                    />
 
                 </View>
             )}
@@ -67,22 +90,24 @@ const Categoria = () => {
             {categoriaSelecionada === 'Mapas' && (
                 <View style={{width:"100%"}}>
 
-                  <FlatList
+                    <Text>Mapas</Text>
 
-                      showsHorizontalScrollIndicator={false}
+                    <FlatList
 
-                      horizontal = {true}
+                        showsHorizontalScrollIndicator={false}
 
-                      data = {mapas}
+                        horizontal = {true}
 
-                      keyExtractor={(item) => item.id}
-                      renderItem={({item}) => (
+                        data = {mapas}
 
-                      <CardMapas nome = {item.nome} imagem = {item.imagem}/>
-                      
-                      )}
+                        keyExtractor={(item) => item.id}
+                        renderItem={({item}) => (
 
-                  />
+                        <CardMapas nome = {item.nome} imagem = {item.imagem}/>
+                        
+                        )}
+
+                    />
 
                 </View>
             )}
